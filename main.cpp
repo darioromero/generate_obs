@@ -1,22 +1,26 @@
 /*
 
- Code to produce random double precision numbers from a gaussian distribution
+ Code to produce random double precision numbers from a gaussian distribution.
+
  The produced nrows of ncols will be written to a file on disk.
+ 
  This code is an attempt to write a library that will compare two different
- sets of arrays where the arrays represent some wells. We will then calculate
- the distance between then and extract the 5 closest one rows on each one row.
+ sets of arrays where those arrays represent some particular observation. We will 
+ then calculate the (euclidean)-distance between them and extract the 5 closest ones.
+
  Example: 
 	- Array 'A' has 4 million rows with 5-columns dimensionality.
-	- Array 'B' has 2 million rows with same number of columns as 'A'.
+	- Array 'B' has 2 million rows with same dimensionality as 'A'.
 
 	For every row in array 'A' we want to find the 5 closest (similar) rows
 	in array 'B' and do the same for every single row in 'A'.
 	array 'A' will always be considered the 'principal' array.
-	array 'B' will always be considered the 'secondary' array in a way that 
-	          we can replace rows in array 'B' with another secondary instance.
+	array 'B' will always be considered the 'secondary' array. In the future,
+			  we can replace rows in array 'B' with another set and perform
+			  the same type of comparison.
 
 	In essence, we want to find the 5-similar rows in array 'B' corresponding 
-	            or closely similar to array 'A'.
+	            or closely similar (in distance) to array 'A'.
 
 */
 
